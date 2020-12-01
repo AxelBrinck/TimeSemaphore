@@ -54,6 +54,7 @@ namespace TimeSemaphore
             var timeToWait = (DateTime.Now - _calls.Last.Value);
 
             Thread.Sleep(timeToWait);
+            RemoveExpiredCalls();
 
             _calls.AddFirst(DateTime.Now);
         }

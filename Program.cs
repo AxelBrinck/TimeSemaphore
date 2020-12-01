@@ -6,12 +6,12 @@ namespace TimeSemaphore
     {
         static void Main(string[] args)
         {
-            var semaphore = new TimeSemaphore(1, TimeSpan.FromSeconds(1));
+            var semaphore = new TimeSemaphore(1200, TimeSpan.FromSeconds(60));
 
-            for (var i = 0; i < 20; i++)
+            for (var i = 0; i < 2000; i++)
             {
                 semaphore.Wait();
-                Console.WriteLine("Green!");
+                Console.WriteLine($"{i} going!");
             }
         }
     }
